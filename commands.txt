@@ -17,7 +17,7 @@ curl 'https://fylebankapiayaz.herokuapp.com/branches/?bank=CANARA+BANK&city=BANG
 curl \
   -X POST \
   -H "Content-Type: application/json" \
-  -d '{"username": "ayaz", "password": "Dark_King.12$"}' \
+  -d '{"username": "ayaz", "password": "pwd_removed"}' \
   https://fylebankapiayaz.herokuapp.com/api/token/
 
 
