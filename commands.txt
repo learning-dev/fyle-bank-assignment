@@ -1,0 +1,37 @@
+
+# To get the bank branch to corresponding IFSC code 
+curl 'https://fylebankapiayaz.herokuapp.com/?ifsc_code=CNRB0000032' \
+  -H 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTcwOTY3ODY3LCJqdGkiOiIzZDE4NWNjYWFhZDM0YjJiODdiZmMyODNiOWI2YjM2NSIsInVzZXJfaWQiOjF9.epuD_cccfJ5OZzEODGos8K8DsK6nFYafUl2NTfcbaxY' \
+  -H 'Postman-Token: 5599dfbc-8cf9-4730-849e-5837d72a75aa' \
+  -H 'cache-control: no-cache' |json_pp
+
+
+ # TO get list the list of branches 
+curl 'https://fylebankapiayaz.herokuapp.com/branches/?bank=CANARA+BANK&city=BANGALORE&limit=20&offset=2' \
+  -H 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTcwOTY3ODY3LCJqdGkiOiIzZDE4NWNjYWFhZDM0YjJiODdiZmMyODNiOWI2YjM2NSIsInVzZXJfaWQiOjF9.epuD_cccfJ5OZzEODGos8K8DsK6nFYafUl2NTfcbaxY' \
+  -H 'Postman-Token: e1ad048b-c937-4239-8301-d1ce8ce901ef' \
+  -H 'cache-control: no-cache' | json_pp
+
+
+# To obtain the jwt token 
+curl \
+  -X POST \
+  -H "Content-Type: application/json" \
+  -d '{"username": "ayaz", "password": "Dark_King.12$"}' \
+  https://fylebankapiayaz.herokuapp.com/api/token/
+
+
+# jwt token (deployed app)
+
+{"refresh":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTU3MDk2Nzg2NywianRpIjoiNGFlYTA3NTNlMmU1NGNiNWIzZWFiNTU0NGQ4ODNiYmMiLCJ1c2VyX2lkIjoxfQ.b2Yh1G0vOhWrd8DIhxgIUfxXXG_YxPCc3zykv8WaOrA",
+
+"access":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTcwOTY3ODY3LCJqdGkiOiIzZDE4NWNjYWFhZDM0YjJiODdiZmMyODNiOWI2YjM2NSIsInVzZXJfaWQiOjF9.epuD_cccfJ5OZzEODGos8K8DsK6nFYafUl2NTfcbaxY"
+}% 
+
+
+
+curl \
+  -X POST \
+  -H "Content-Type: application/json" \
+  -d '{"refresh":eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTU3MDk2Nzg2NywianRpIjoiNGFlYTA3NTNlMmU1NGNiNWIzZWFiNTU0NGQ4ODNiYmMiLCJ1c2VyX2lkIjoxfQ.b2Yh1G0vOhWrd8DIhxgIUfxXXG_YxPCc3zykv8WaOrA"}' \
+  https://fylebankapiayaz.herokuapp.com/api/token/refresh/
