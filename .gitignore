@@ -20,8 +20,10 @@ parts/
 sdist/
 var/
 wheels/
+
 pip-wheel-metadata/
 share/python-wheels/
+
 *.egg-info/
 .installed.cfg
 *.egg
@@ -41,13 +43,14 @@ pip-delete-this-directory.txt
 htmlcov/
 .tox/
 .nox/
+
 .coverage
 .coverage.*
 .cache
 nosetests.xml
 coverage.xml
 *.cover
-*.py,cover
+
 .hypothesis/
 .pytest_cache/
 
@@ -91,6 +94,10 @@ ipython_config.py
 #   install all needed dependencies.
 #Pipfile.lock
 
+
+# pyenv
+.python-version
+
 # celery beat schedule file
 celerybeat-schedule
 
@@ -119,8 +126,9 @@ venv.bak/
 # mypy
 .mypy_cache/
 .dmypy.json
-dmypy.json
+
 
 # Pyre type checker
 .pyre/
 .ipynb_checkpoints
+
